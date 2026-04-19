@@ -1,7 +1,7 @@
 # Exploring Interactions Between Financial Indicators in S&P 1500 Firms
 
 Replication materials for my undergraduate dissertation, University of St Andrews,
-School of Mathematics and Statistics (BSc Mathematics, 2025).
+School of Mathematics and Statistics (BSc Mathematics, 2026).
 
 **Author:** Christy Cargill
 **Supervisor:** Dr Michail Papathomas
