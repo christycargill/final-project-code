@@ -86,7 +86,7 @@ summarise_continuous <- function(data, var) {
     q25 = quantile(x, 0.25, na.rm = TRUE),
     median = quantile(x, 0.50, na.rm = TRUE),
     q75 = quantile(x, 0.75, na.rm = TRUE),
-    q90 = quantile(x, 0.90, na.rm = TRUE),
+    q95 = quantile(x, 0.95, na.rm = TRUE),
     q99 = quantile(x, 0.99, na.rm = TRUE),
   )
 }
@@ -1643,25 +1643,6 @@ dense_table <- dense_results %>%
 print(dense_table)
 
 
-# plot MSE 
-ggplot(dense_results,
-       aes(x      = factor(Rho),
-           y      = Mean_MSE,
-           colour = Method,
-           group  = Method)) +
-  geom_line(linewidth = 0.8) +
-  geom_point(size = 2) +
-  labs(
-    title    = "Monte Carlo Simulation: Mean Test MSE",
-    subtitle = paste0("Dense true model, n=", n,
-                      ", p=", p,
-                      ", averaged over ", n_sim, " iterations"),
-    x        = "Predictor correlation (rho)",
-    y        = "Mean Test MSE",
-    colour   = "Method"
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(legend.position = "bottom")
 
 
 
@@ -1758,3 +1739,4 @@ for (i in 1:n_iter_cr) {
 
 cat(sprintf("hybrid - mean: %.3f, sd: %.3f, bias: %.3f\n",
             mean(hybrid_b1), sd(hybrid_b1), mean(hybrid_b1) - 3))
+
